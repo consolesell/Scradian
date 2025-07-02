@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BooKHousEDiaNi - Premium Rental Properties</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="homestyles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                        secondary: '#8b5cf6',
+                        accent: '#06b6d4',
+                        dark: '#1f2937',
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 min-h-screen">
+    <!-- Loading Animation -->
+    <div id="loadingScreen" class="fixed inset-0 bg-gradient-to-r from-primary to-secondary z-50 flex items-center justify-center">
+        <div class="text-center">
+            <div class="relative">
+                <div class="loading-spinner"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <i class="fas fa-home text-white text-3xl animate-pulse"></i>
+                </div>
+            </div>
+            <h2 class="text-white text-2xl font-bold mt-6 animate-fade-in">BooKHousEDiaNi</h2>
+            <p class="text-blue-100 mt-2">Loading your dream home...</p>
+        </div>
+    </div>
+
+    <!-- Pull to Refresh Indicator -->
+    <div id="pullRefreshIndicator" class="fixed top-0 left-0 right-0 bg-primary text-white text-center py-2 transform -translate-y-full transition-transform duration-300 z-40">
+        <i class="fas fa-sync-alt animate-spin mr-2"></i>
+        Release to refresh
+    </div>
+
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-30 bg-white/80 backdrop-blur-lg border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                            BooKHousEDiaNi
+                        </h1>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button id="searchToggle" class="p-2 text-gray-600 hover:text-primary transition-colors rounded-lg hover:bg-gray-100">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+                    <button id="loginBtn" class="bg-gradient-to-r from-primary to-secondary text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-user mr-2"></i>Login
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Modal -->
+    <div id="searchModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 transform transition-all">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-bold text-gray-800">Find Your Perfect Home</h3>
+                    <button id="closeSearch" class="text-gray-500 hover:text-gray-700">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+                
+                <form id="searchForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
+                        <input type="text" id="locationFilter" placeholder="Enter location..." 
+                               class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">House Type</label>
+                        <select id="houseTypeFilter" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option value="">All Types</option>
+                            <option value="Single room">Single Room</option>
+                            <option value="Bedsitter">Bedsitter</option>
+                            <option value="One-bedroom">One Bedroom</option>
+                            <option value="Villa">Villa</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <input type="number" id="minPrice" placeholder="Min KSh" 
+                                   class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="number" id="maxPrice" placeholder="Max KSh" 
+                                   class="p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-gradient-to-r from-primary to-secondary text-white py-3 rounded-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <i class="fas fa-search mr-2"></i>Find Properties
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6 animate-fade-in-up">
+                Find Your Perfect
+                <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                    Rental Home
+                </span>
+            </h2>
+            <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fade-in-up-delay">
+                Discover premium rental properties from trusted landlords. From cozy single rooms to luxurious villas.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up-delay-2">
+                <button class="bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-search mr-2"></i>Browse Properties
+                </button>
+                <button class="border-2 border-primary text-primary px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary hover:text-white transition-all duration-300">
+                    <i class="fas fa-plus mr-2"></i>List Property
+                </button>
+            </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-20 h-20 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full animate-float"></div>
+        <div class="absolute bottom-20 right-10 w-16 h-16 bg-gradient-to-br from-accent/20 to-primary/20 rounded-full animate-float-delay"></div>
+    </section>
+
+    <!-- Properties Grid -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800">Available Properties</h3>
+                <div class="flex items-center space-x-2 text-sm text-gray-600">
+                    <span>Sort by:</span>
+                    <select id="sortProperties" class="bg-white border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <option value="date">Latest</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="propertiesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Properties will be dynamically loaded here -->
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button id="loadMoreBtn" class="bg-white border-2 border-primary text-primary px-8 py-3 rounded-full hover:bg-primary hover:text-white transition-all duration-300">
+                    <i class="fas fa-plus mr-2"></i>Load More Properties
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <h4 class="text-2xl font-bold mb-4 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                        BooKHousEDiaNi
+                    </h4>
+                    <p class="text-gray-400 mb-6 max-w-md">
+                        Your trusted platform for finding and listing premium rental properties in Kenya. 
+                        Connect with verified landlords and tenants.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary rounded-full flex items-center justify-center hover:bg-secondary transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Quick Links</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Browse Properties</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">List Property</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-lg font-semibold mb-4">Support</h5>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
+                <p>&copy; 2025 BooKHousEDiaNi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="homescript.js"></script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+{
+  "properties": [
+    {
+      "id": "443ff4",
+      "tenantName": "Sunny Westlands Apartment",
+      "location": "Westlands, Nairobi",
+      "houseType": "One-bedroom",
+      "price": 25000,
+      "images": [
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+      ],
+      "rating": 4.5,
+      "dateUploaded": "2025-06-28",
+      "description": "Modern one-bedroom apartment in the heart of Westlands with all amenities included."
+    },
+    {
+      "id": "556ab2",
+      "tenantName": "Garden View Villa",
+      "location": "Karen, Nairobi",
+      "houseType": "Villa",
+      "price": 85000,
+      "images": [
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2075&q=80",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80",
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+      ],
+      "rating": 4.8,
+      "dateUploaded": "2025-06-30",
+      "description": "Luxurious villa with garden views in exclusive Karen neighborhood."
+    },
+    {
+      "id": "789cd3",
+      "tenantName": "Cozy Kasarani Bedsitter",
+      "location": "Kasarani, Nairobi",
+      "houseType": "Bedsitter",
+      "price": 12000,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80",
+        "https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2032&q=80",
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      ],
+      "rating": 4.2,
+      "dateUploaded": "2025-07-01",
+      "description": "Affordable and comfortable bedsitter perfect for young professionals."
+    },
+    {
+      "id": "112ef5",
+      "tenantName": "Executive CBD Single Room",
+      "location": "CBD, Nairobi",
+      "houseType": "Single room",
+      "price": 8000,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80",
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      ],
+      "rating": 3.9,
+      "dateUploaded": "2025-06-25",
+      "description": "Single room in the heart of CBD with easy access to amenities."
+    },
+    {
+      "id": "334gh6",
+      "tenantName": "Modern Kilimani Loft",
+      "location": "Kilimani, Nairobi",
+      "houseType": "Other",
+      "price": 45000,
+      "images": [
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80",
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2075&q=80",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80"
+      ],
+      "rating": 4.6,
+      "dateUploaded": "2025-06-29",
+      "description": "Stylish loft apartment with modern design in trendy Kilimani area."
+    },
+    {
+      "id": "567jk8",
+      "tenantName": "Riverside Lavington Apartment",
+      "location": "Lavington, Nairobi",
+      "houseType": "One-bedroom",
+      "price": 35000,
+      "images": [
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80"
+      ],
+      "rating": 4.3,
+      "dateUploaded": "2025-06-27",
+      "description": "Elegant one-bedroom apartment with riverside views in Lavington."
+    },
+    {
+      "id": "890lm9",
+      "tenantName": "Parklands Family Villa",
+      "location": "Parklands, Nairobi",
+      "houseType": "Villa",
+      "price": 95000,
+      "images": [
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2075&q=80",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80",
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2
+        {
+  "properties": [
+    {
+      "id": "443ff4",
+      "tenantName": "Sunny Westlands Apartment",
+      "location": "Westlands, Nairobi",
+      "houseType": "One-bedroom",
+      "price": 25000,
+      "images": [
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+      ],
+      "rating": 4.5,
+      "dateUploaded": "2025-06-28",
+      "description": "Modern one-bedroom apartment in the heart of Westlands with all amenities included."
+    },
+    {
+      "id": "556ab2",
+      "tenantName": "Garden View Villa",
+      "location": "Karen, Nairobi",
+      "houseType": "Villa",
+      "price": 85000,
+      "images": [
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2075&q=80",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80",
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      ],
+      "rating": 4.8,
+      "dateUploaded": "2025-06-30",
+      "description": "Luxurious villa with garden views in exclusive Karen neighborhood."
+    },
+    {
+      "id": "789cd3",
+      "tenantName": "Cozy Kasarani Bedsitter",
+      "location": "Kasarani, Nairobi",
+      "houseType": "Bedsitter",
+      "price": 12000,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80",
+        "https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2032&q=80"
+      ],
+      "rating": 4.2,
+      "dateUploaded": "2025-07-01",
+      "description": "Affordable and comfortable bedsitter perfect for young professionals."
+    },
+    {
+      "id": "112ef5",
+      "tenantName": "Executive CBD Single Room",
+      "location": "CBD, Nairobi",
+      "houseType": "Single room",
+      "price": 8000,
+      "images": [
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80"
+      ],
+      "rating": 3.9,
+      "dateUploaded": "2025-06-25",
+      "description": "Single room in the heart of CBD with easy access to amenities."
+    },
+    {
+      "id": "334gh6",
+      "tenantName": "Modern Kilimani Loft",
+      "location": "Kilimani, Nairobi",
+      "houseType": "Other",
+      "price": 45000,
+      "images": [
+        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2074&q=80"
+      ],
+      "rating": 4.6,
+      "dateUploaded": "2025-06-29",
+      "description": "Stylish loft apartment with modern design in trendy Kilimani area."
+    },
+    {
+      "id": "567jk8",
+      "tenantName": "Riverside Lavington Apartment",
+      "location": "Lavington, Nairobi",
+      "houseType": "One-bedroom",
+      "price": 35000,
+      "images": [
+        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+      ],
+      "rating": 4.3,
+      "dateUploaded": "2025-06-27",
+      "description": "Elegant one-bedroom apartment with riverside views in Lavington."
+    },
+    {
+      "id": "890lm9",
+      "tenantName": "Parklands Family Villa",
+      "location": "Parklands, Nairobi",
+      "houseType": "Villa",
+      "price": 95000,
+      "images": [
+        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2075&q=80",
+        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80"
+      ],
+      "rating": 4.7,
+      "dateUploaded": "2025-06-26",
+      "description": "Spacious family villa in Parklands with premium amenities."
+    },
+    {
+      "id": "123no0",
+      "tenantName": "Kileleshwa Studio",
+      "location": "Kileleshwa, Nairobi",
+      "houseType": "Bedsitter",
+      "price": 18000,
+      "images": [
+        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1615873968403-89e068629265?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2032&q=80"
+      ],
+      "rating": 4.1,
+      "dateUploaded": "2025-07-02",
+      "description": "Modern studio apartment in upscale Kileleshwa neighborhood."
+    }
+  ]
+}
