@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Finder - Find Your Dream Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="font-inter bg-gradient-to-br from-slate-50 to-indigo-50 min-h-screen">
+    <!-- Role Selection Modal -->
+    <div id="roleModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 glassmorphism">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-home text-white text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Welcome to Property Finder</h2>
+                <p class="text-gray-600">Choose your role to continue</p>
+            </div>
+            <div class="space-y-4">
+                <button onclick="selectRole('landlord')" class="w-full bg-gradient-to-r from-indigo-500 to-violet-500 text-white py-3 px-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                    <i class="fas fa-building mr-2"></i>
+                    I'm a Landlord
+                </button>
+                <button onclick="selectRole('seeker')" class="w-full bg-gradient-to-r from-cyan-500 to-blue-500 text-white py-3 px-4 rounded-xl font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                    <i class="fas fa-search mr-2"></i>
+                    I'm a House Seeker
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Property Form Modal -->
+    <div id="propertyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 glassmorphism max-h-[90vh] overflow-y-auto">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Add New Property</h2>
+                <p class="text-gray-600">Fill in the details below</p>
+            </div>
+            <form id="propertyForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Apartment Name</label>
+                    <input type="text" id="apartmentName" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">House Type</label>
+                    <select id="houseType" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        <option value="">Select Type</option>
+                        <option value="Bedsitter">Bedsitter</option>
+                        <option value="One-bedroom">One-bedroom</option>
+                        <option value="Two-bedroom">Two-bedroom</option>
+                        <option value="Three-bedroom">Three-bedroom</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Single room">Single room</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Location</label>
+                    <input type="text" id="location" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Price (KES)</label>
+                    <input type="number" id="price" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1">Description</label>
+                    <textarea id="description" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"></textarea>
+                </div>
+                <div class="flex space-x-3">
+                    <button type="submit" class="flex-1 bg-gradient-to-r from-indigo-500 to-violet-500 text-white py-2 px-4 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                        Next: Upload Images
+                    </button>
+                    <button type="button" onclick="closePropertyModal()" class="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-lg font-semibold hover:bg-gray-400 transition-colors">
+                        Cancel
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Image Upload Modal -->
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 glassmorphism">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Upload Images</h2>
+                <p class="text-gray-600">Upload at least 3 images of your property</p>
+            </div>
+            <div class="space-y-4">
+                <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+                    <i class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"></i>
+                    <input type="file" id="imageUpload" multiple accept="image/*" class="hidden">
+                    <button onclick="document.getElementById('imageUpload').click()" class="bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition-colors">
+                        Select Images
+                    </button>
+                    <p class="text-sm text-gray-500 mt-2">Select multiple images</p>
+                </div>
+                <div id="imagePreview" class="grid grid-cols-2 gap-2 hidden">
+                    <!-- Image previews will be inserted here -->
+                </div>
+                <div id="imageActions" class="flex space-x-3 hidden">
+                    <button onclick="completePost()" class="flex-1 bg-gradient-to-r from-green-500 to-emerald-500 text-white py-2 px-4 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                        Complete Post
+                    </button>
+                    <button onclick="closeImageModal()" class="flex-1 bg-gray-300 text-gray-700 py-2 px-4 rounded-lg font-semibold hover:bg-gray-400 transition-colors">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-white/80 shadow-sm">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-10 h-10 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-full flex items-center justify-center">
+                        <i class="fas fa-home text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-violet-600 bg-clip-text text-transparent">
+                            Property Finder
+                        </h1>
+                        <p class="text-sm text-gray-600">Find Your Dream Home</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button onclick="showRoleModal()" class="bg-gradient-to-r from-indigo-500 to-violet-500 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-200">
+                        <i class="fas fa-plus mr-2"></i>
+                        Add Property
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Loading Spinner -->
+    <div id="loadingSpinner" class="fixed inset-0 bg-white/80 flex items-center justify-center z-30">
+        <div class="text-center">
+            <div class="spinner"></div>
+            <p class="text-gray-600 mt-4">Loading properties...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- Search and Filter Section -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-8 glassmorphism">
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <div class="relative">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                        <input type="text" placeholder="Search by location or name..." 
+                               class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        <option value="">All Types</option>
+                        <option value="Bedsitter">Bedsitter</option>
+                        <option value="One-bedroom">One-bedroom</option>
+                        <option value="Two-bedroom">Two-bedroom</option>
+                        <option value="Three-bedroom">Three-bedroom</option>
+                        <option value="Villa">Villa</option>
+                        <option value="Single room">Single room</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <select class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                        <option value="">Sort by</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Rating</option>
+                        <option value="newest">Newest</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Properties Grid -->
+        <div id="propertiesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Property cards will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <!-- Success Message -->
+    <div id="successMessage" class="fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg hidden z-50">
+        <i class="fas fa-check-circle mr-2"></i>
+        Property added successfully!
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
